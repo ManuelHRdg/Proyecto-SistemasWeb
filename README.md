@@ -1,2 +1,2 @@
 # Proyecto-SistemasWeb
-Repositorio para el 
+Repositorio para el proyecto de Sistemas Web

@@ -1,0 +1,72 @@
+.navbar { 
+    background-color: #4B0082 !important; 
+} 
+
+
+#botonIngreso{
+    color: white;
+    background-color: #EE82EE;
+}
+
+#botonRegistro{
+    color: white;
+    background-color: black;
+}
+
+
+
+#fondo{
+    background: #4169E1;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+
+    
+ 
+    animation: animate 20s ease-in-out infinite;
+    /*
+    animation-direction: alternate-reverse;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    */
+    
+}
+
+
+@keyframes animate{
+    0%,100%{
+        background-image: url('/img/SBR.jpg');
+    }
+    25%{
+        background-image: url('/img/SBK.jpg');
+    }
+    50%{
+        background-image: url('/img/SBT.jpg');
+    }
+    75%{
+        background-image: url('/img/SBK.jpg');
+    }
+}
+
+
+.leftside, .rightside{
+    height:100%;
+    width:100%;
+}
+
+#cardRight1, #cardLeft1{
+    margin-top: 5rem;
+}
+
+#cardRight2, #cardLeft2{
+    margin-top: 5rem;
+}
+
+#yes{
+    width: 100%;
+    margin-top: 5rem;
+}

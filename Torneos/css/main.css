@@ -6,11 +6,13 @@
 #botonIngreso{
     color: white;
     background-color: #EE82EE;
+    margin-right: 3rem;
 }
 
 #botonRegistro{
     color: white;
     background-color: black;
+    margin-right: 2rem;
 }
 
 

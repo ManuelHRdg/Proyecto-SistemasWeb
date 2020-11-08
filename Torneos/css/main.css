@@ -41,16 +41,16 @@
 
 @keyframes animate{
     0%,100%{
-        background-image: url('/img/SBR.jpg');
+        background-image: url('img/SBR.jpg');
     }
     25%{
-        background-image: url('/img/SBK.jpg');
+        background-image: url('img/SBK.jpg');
     }
     50%{
-        background-image: url('/img/SBT.jpg');
+        background-image: url('img/SBT.jpg');
     }
     75%{
-        background-image: url('/img/SBK.jpg');
+        background-image: url('img/SBK.jpg');
     }
 }
 

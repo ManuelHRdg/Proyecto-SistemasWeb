@@ -15,6 +15,12 @@
     margin-right: 2rem;
 }
 
+#contenedor{
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 
 
 #fondo{
@@ -26,7 +32,7 @@
 
     
  
-    animation: animate 20s ease-in-out infinite;
+    animation: animate 50s ease-in-out infinite;
     /*
     animation-direction: alternate-reverse;
     animation-duration: 30s;

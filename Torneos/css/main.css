@@ -47,19 +47,17 @@
   }
 }
 
-
-#contenedorRegistro{
-    margin-top: 5rem;
+#contenedorRegistro {
+  margin-top: 5rem;
 }
 
 #fondoRegistro {
-    background: url("../img/4.jpg") #4169e1;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: multiply;
-    background-attachment: fixed;
-  }
-
+  background: url("../img/4.jpg") #4169e1;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+}
 
 .leftside,
 .rightside {
@@ -69,20 +67,24 @@
 
 #cardRight1,
 #cardLeft1 {
+  color: white;
   margin-top: 5rem;
+  background-color: rgb(49, 49, 49);
 }
 
 #cardRight2,
 #cardLeft2 {
+  color: white;
+  margin-top: 5rem;
+  background-color: rgb(49, 49, 49);
+}
+
+#cardRegistro {
   margin-top: 5rem;
 }
 
-#cardRegistro{
-    margin-top: 5rem;
-}
-
-#centroRegistro{
-    height: 100vh;
+#centroRegistro {
+  height: 100vh;
 }
 
 #yes {

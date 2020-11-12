@@ -29,14 +29,6 @@
   background-attachment: fixed;
 
   animation: animate 50s ease-in-out infinite;
-  /*
-    animation-direction: alternate-reverse;
-    animation-duration: 30s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    animation-timing-function: ease-in-out;
-    */
 }
 
 @keyframes animate {
@@ -66,15 +58,6 @@
     background-size: cover;
     background-blend-mode: multiply;
     background-attachment: fixed;
-
-    /*
-      animation-direction: alternate-reverse;
-      animation-duration: 30s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-      animation-play-state: running;
-      animation-timing-function: ease-in-out;
-      */
   }
 
 

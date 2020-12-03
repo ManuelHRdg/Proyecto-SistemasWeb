@@ -14,124 +14,6 @@
   </head>
 
   <body>
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <!-- Form login -->
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >Tu Email es secreto... XD</small
-                >
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                />
-              </div>
-            </form>
-            <!-- Fin del form login -->
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Ingresar</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Fin Modal -->
-
-    <!-- Navigation bar section -->
-
-    <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark"
-      style="height: 5rem"
-    >
-      <a class="navbar-brand" href="#">
-        <img
-          src="img/Kindred.jpeg"
-          alt="foto perfil"
-          width="40"
-          height=""
-          class="rounded-circle"
-        />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html"
-              >Inicio <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Acceder</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <button
-            class="btn my-2 my-sm-0"
-            id="botonIngreso"
-            type="button"
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            Ingresar
-          </button>
-          <a
-            class="btn my-2 my-sm-0"
-            id="botonRegistro"
-            type="submit"
-            href="registro.html"
-            >Registro</a
-          >
-        </form>
-      </div>
-    </nav>
-
-    <!-- Fin navbar -->
 
     <div class="container-fluid" id="contenedorRegistro"></div>
     <div class="row no-gutters" id="fondoRegistro">
@@ -193,9 +75,9 @@
               </div> 
               <div class="card-footer">
                 <button type="button" class="btn btn-primary">Registrarse</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                <a type="submit" class="btn btn-danger" href="index.html">
                   Cancelar
-                </button>
+                </a>
               </div>
               </div>
             </li>

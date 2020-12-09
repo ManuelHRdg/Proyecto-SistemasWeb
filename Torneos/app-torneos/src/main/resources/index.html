@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pruebas Proyecto</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Form login -->
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+                <small id="emailHelp" class="form-text text-muted"
+                  >Tu Email es secreto... XD</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+            </form>
+            <!-- Fin del form login -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Ingresar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Modal -->
+
+    <!-- Navigation bar section -->
+
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top"
+      style="height: 5rem"
+    >
+      <a class="navbar-brand" href="#">
+        <img
+          src="img/Kindred.jpeg"
+          alt="foto perfil"
+          width="40"
+          height=""
+          class="rounded-circle"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"
+              >Inicio <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Perfil.html">Perfil</a>
+          </li>
+        </ul>
+
+        <!-- Botones de ingreso y registro -->
+        <form class="form-inline my-2 my-lg-0">
+          <button
+            class="btn my-2 my-sm-0"
+            id="botonIngreso"
+            type="button"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            Ingresar
+          </button>
+          <a
+            class="btn my-2 my-sm-0"
+            id="botonRegistro"
+            type="submit"
+            href="registro.html"
+            >Registro</a
+          >
+        </form>
+      </div>
+    </nav>
+
+    <div class="container-fluid" id="contenedor"></div>
+      <div class="row no-gutters" id="fondo">
+        <div class="col no-gutters">
+          <div class="leftside d-flex justify-content-center">
+            <!-- Unordered list para que las tarjetas izquierdas fluyan hacia abajo-->
+
+            <ul class="columna-izquierda">
+              <li>
+                <div
+                  class="card"
+                  id="cardLeft1"
+                  style="width: 35rem; height: 40rem"
+                >
+                  <img
+                    class="card-img-top"
+                    src="img/Panel 1.jpg"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Carta derecha inferior -->
+              <!--
+              <li>
+                <div
+                  class="card"
+                  id="cardLeft2"
+                  style="width: 35rem; height: 40rem"
+                >
+                  <img
+                    class="card-img-top"
+                    src="img/SBT.jpg"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </li>
+            -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="col no-gutters">
+          <div class="rightside d-flex justify-content-center">
+            <!-- Unordered list para que las tarjetas derechas fluyan hacia abajo-->
+
+            <ul class="columna-derecha">
+              <li>
+                <div
+                  class="card"
+                  id="cardRight1"
+                  style="width: 35rem; height: 40rem"
+                >
+                  <img
+                    class="card-img-top"
+                    src="img/Panel 2.1.jpg"
+                    alt="Card image cap"
+                  />
+                  <table class="table" style="color:white">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Juego</th>
+                        <th scope="col">Torneo</th>
+                        <th scope="col">Información</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>League of Legends</td>
+                        <td>Ete Sech</td>
+                        <td><button type="button" class="btn btn-danger">Ver Detalles</button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Warzone</td>
+                        <td>Survivor</td>
+                        <td><button type="button" class="btn btn-danger">Ver Detalles</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Fortnite</td>
+                        <td>Builders</td>
+                        <td><button type="button" class="btn btn-danger">Ver Detalles</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>League of Legends</td>
+                        <td>Awaken</td>
+                        <td><button type="button" class="btn btn-danger">Ver Detalles</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+
+              <!-- Carta derecha inferior -->
+              <!--
+              <li>
+                <div
+                  class="card"
+                  id="cardRight2"
+                  style="width: 35rem; height: 40rem"
+                >
+                  <img
+                    class="card-img-top"
+                    src="img/SBK.jpg"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fin de columna derecha -->
+      </div>
+
+      <!-- Fin de las filas -->
+    </div>
+
+    <!-- Source section -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

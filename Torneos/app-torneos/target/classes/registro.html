@@ -4,16 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Main CSS-->
     <link href="css/registro.css" rel="stylesheet" media="all">
 </head>
@@ -27,14 +21,14 @@
                     <h2 class="title">Info de registro</h2>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Nombre de usuario" name="nombre">
+                            <input class="input--style-3" type="text" placeholder="Nombre de usuario" name="nombre" id="nombreR">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="email" placeholder="E-mail" name="email">
+                            <input class="input--style-3" type="email" placeholder="E-mail" name="email" id="emailR">
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender">
+                                <select name="gender" id="sexoR">
                                     <option disabled="disabled" selected="selected">Sexo</option>
                                     <option>Masculino</option>
                                     <option>Femenino</option>
@@ -44,13 +38,13 @@
                             </div>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="password" placeholder="Password" name="password1">
+                            <input class="input--style-3" type="password" placeholder="Password" name="password1" id="passwordR">
                         </div>
                         <div class="input-group">
                             <input class="input--style-3" type="password" placeholder="Repite el Password" name="password2">
                         </div>
                         <div class="p-t-10">
-                            <button class="btn btn--pill btn--green" type="submit">Confirmar</button>
+                            <button class="btn btn--pill btn--green" type="button" id="btnRegistro">Confirmar</button>
                         </div>
                         <div class="p-t-10">
                           <a class="btn btn--pill btn--red" type="submit" href="index.html">Cancelar</a>
@@ -64,6 +58,9 @@
 
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+
+<script src="scripts/scripts.js"></script>
 
 </html>
 <!-- end document-->

@@ -86,3 +86,7 @@
 #centroRegistro {
   height: 100vh;
 }
+
+#modal-login{
+  background-color: rgb(49, 49, 49);
+}

@@ -10,46 +10,9 @@
   }
   
   /* ==========================================================================
-     #GRID
+     #Tamaño de la caja de registro
      ========================================================================== */
-  .row {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-  
-  .row-space {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-  
-  .col-2 {
-    width: -webkit-calc((100% - 60px) / 2);
-    width: -moz-calc((100% - 60px) / 2);
-    width: calc((100% - 60px) / 2);
-  }
-  
-  @media (max-width: 767px) {
-    .col-2 {
-      width: 100%;
-    }
-  }
-  
-  /* ==========================================================================
-     #BOX-SIZING
-     ========================================================================== */
-  /**
-   * More sensible default box-sizing:
-   * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
-   */
+
   html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -82,22 +45,6 @@
   fieldset, legend {
     margin: 0;
     padding: 0;
-  }
-  
-  /**
-   * Remove trailing margins from nested lists.
-   */
-  li > ol,
-  li > ul {
-    margin-bottom: 0;
-  }
-  
-  /**
-   * Remove default table spacing.
-   */
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
   }
   
   /**

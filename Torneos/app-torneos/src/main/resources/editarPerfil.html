@@ -4,84 +4,116 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-      
-    />
-    <link rel="stylesheet" href="css/main.css" 
-    href="css/editarPerfil.css" rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../resources/css/principal.css">
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- CSS Registro -->
+    <link href="css/registro.css" rel="stylesheet" media="all">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   </head>
 
   <body>
-    <style>
-      *{margin: 0;padding: 0;
-        box-sizing: border-box;
-        font-family: sans-serif;}
+
+    <div class="wrapper">
+
+      <!-- Side Bar Section -->
+      <div class="sidebar">
+          <h2>
+              <a class="navbar-brand" href="editarPerfil.html">
+                  <img
+                    src="img/Kindred.jpeg"
+                    alt="foto perfil"
+                    width="40"
+                    height=""
+                    class="rounded-circle"
+                  />
+                </a>
+                <div id="usuario"></div>
+              </h2>
+  
+              <!-- Botones de Navegacion -->
+          <ul>
+              <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+              <li><a href="Perfil.html"><i class="fas fa-user"></i>Perfil</a></li>
+              <li><a href=""><i class="fas fa-medal"></i>Mis Torneos</a></li>
+              <li><a href="#"><i class="fas fa-headset"></i>League of Legends</a></li>
+              <li><a href="#"><i class="fas fa-bus"></i>Fortnite</a></li>
+              <li><a href="#"><i class="fas fa-plane"></i>Warzone</a></li>
+              <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
+          </ul> 
+          <!-- Fin Botones de Navegacion -->
+      </div>
+      <!-- Fin de Side Bar -->
+  
+      <!-- Contenido -->
+      <div class="main_content">
+          <div class="header">Por Demacia!!!.</div>  
+          <div class="info">
+            <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+              <div class="wrapper wrapper--w780">
+                  <div class="card card-3">
+                      <div class="card-heading"></div>
+                      <div class="card-body">
+                          <!-- Titulo del Card -->
+                          <h2 class="title">Info de registro</h2>
+                          <form method="POST">
         
-        .contenedor{
-            width: 40%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 17vh;
-        }
-        .contenedor figure{
-           position:relative;
-            height: 140px;
-            cursor: pointer;
-            width: 250px;
-            overflow: hidden;
-            border-radius: 6px;
-            box-shadow: 0px 5px 5px rgba(0,0,0,0.50);
-        }
-        .contenedor figure img{
-            width: 100%;
-            height: 100%;
-            transition: all 500ms ease-out;
-        }
-        .contenedor figure .capa{
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,103,123,0.7);
-            transition: all 500ms ease-out;
-            opacity: 0;
-            visibility: hidden;
-           text-align: center;
-        }
-        .contenedor figure:hover > .capa {
-            opacity: 1;
-            visibility: visible;
-        }
-        .contenedor figure:hover > .capa h3{
-            margin-top: 70px;
-            margin-bottom: 15px;
-        }
-        .contenedor figure:hover > img{
-            transform: scale(1.3);
-        }
-        .contenedor figure .capa h3{
-            color: #fff;
-            font-weight: 400;
-            margin-bottom: 120px;
-            transition: all 500ms ease-out;
-             margin-top: 30px;
-        }
-        .contenedor figure .capa p{
-            color: #fff;
-            font-size: 15px;
-            line-height: 1.5;
-            width: 100%;
-            max-width: 220px;
-            margin: auto;
-        }
-    </style>
-    <div class="container-fluid" id="contenedorRegistro"></div>
+                              <!-- Campos para registro -->
+        
+                              <!-- Campo Nombre -->
+                              <div class="input-group">
+                                  <input class="input--style-3" type="text" placeholder="Nombre de usuario" name="nombre" id="nombreR">
+                              </div>
+        
+                              <!-- Campo Email -->
+                              <div class="input-group">
+                                  <input class="input--style-3" type="email" placeholder="E-mail" name="email" id="emailR">
+                              </div>
+        
+                              <!-- Campo Sexo -->
+                              <div class="input-group">
+                                  <!-- Seleccion -->
+                                  <div class="rs-select2 js-select-simple select--no-search">
+                                      <select name="gender" id="sexoR">
+                                          <option disabled="disabled" selected="selected">Sexo</option>
+                                          <option>Masculino</option>
+                                          <option>Femenino</option>
+                                          <option>Otro</option>
+                                      </select>
+                                      <div class="select-dropdown"></div>
+                                  </div>
+                              </div>
+        
+                              <!-- Campos para Password -->
+                              <div class="input-group">
+                                  <input class="input--style-3" type="password" placeholder="Password" name="password1" id="passwordR">
+                              </div>
+                              <div class="input-group">
+                                  <input class="input--style-3" type="password" placeholder="Repite el Password" name="password2">
+                              </div>
+        
+                              <!-- Botones Confirmar y Cancelar -->
+                              <div class="p-t-10">
+                                  <button class="btn btn--pill btn--green" type="button" id="btnRegistro">Confirmar</button>
+                              </div>
+                              <div class="p-t-10">
+                                <a class="btn btn--pill btn--red" type="submit" href="index.html">Cancelar</a>
+                            </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fin del contenido -->
+  </div>
+
+    <!--
+    <div class="container-fluid" id="contenedor"></div>
     <div class="row no-gutters" id="fondoRegistro">
       <div class="col no-gutters">
         <div class="leftside d-flex justify-content-center" id="centroRegistro">
@@ -158,9 +190,7 @@
 
       
     </div>
-
-    <!-- Fin de las filas -->
-  </div>
+  -->
 
     <!-- Source section -->
     <script

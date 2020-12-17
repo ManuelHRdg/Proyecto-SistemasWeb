@@ -4,18 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../resources/css/principal.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
 
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+    <!--AXIOS-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- CSS Registro -->
-    <link href="css/registro.css" rel="stylesheet" media="all">
+    <!-- CSS editarPerfil -->
+    <link rel="stylesheet" href="../resources/css/principal.css">
+    <link href="css/editarPerfil.css" rel="stylesheet" media="all">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   </head>
 
   <body>
+
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id="modalConfirmar"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirmar eliminar foto de perfil</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <button class="btn btn--pill btn--blue">Confirmar</button>
+          <button class="btn btn--pill btn--red" data-dismiss="modal">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Modal -->
 
     <div class="wrapper">
 
@@ -24,11 +63,11 @@
           <h2>
               <a class="navbar-brand" href="editarPerfil.html">
                   <img
-                    src="img/Kindred.jpeg"
                     alt="foto perfil"
-                    width="40"
-                    height=""
+                    width="100"
+                    height="100"
                     class="rounded-circle"
+                    id="fotoPerfil"
                   />
                 </a>
                 <div id="usuario"></div>
@@ -42,7 +81,7 @@
               <li><a href="#"><i class="fas fa-headset"></i>League of Legends</a></li>
               <li><a href="#"><i class="fas fa-bus"></i>Fortnite</a></li>
               <li><a href="#"><i class="fas fa-plane"></i>Warzone</a></li>
-              <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
+              <li><a href="#"><i class="fas fa-door-closed"></i>Cerrar sesion</a></li>
           </ul> 
           <!-- Fin Botones de Navegacion -->
       </div>
@@ -52,145 +91,103 @@
       <div class="main_content">
           <div class="header">Por Demacia!!!.</div>  
           <div class="info">
-            <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-              <div class="wrapper wrapper--w780">
-                  <div class="card card-3">
-                      <div class="card-heading"></div>
-                      <div class="card-body">
-                          <!-- Titulo del Card -->
-                          <h2 class="title">Info de registro</h2>
-                          <form method="POST">
-        
-                              <!-- Campos para registro -->
-        
-                              <!-- Campo Nombre -->
-                              <div class="input-group">
-                                  <input class="input--style-3" type="text" placeholder="Nombre de usuario" name="nombre" id="nombreR">
-                              </div>
-        
-                              <!-- Campo Email -->
-                              <div class="input-group">
-                                  <input class="input--style-3" type="email" placeholder="E-mail" name="email" id="emailR">
-                              </div>
-        
-                              <!-- Campo Sexo -->
-                              <div class="input-group">
-                                  <!-- Seleccion -->
-                                  <div class="rs-select2 js-select-simple select--no-search">
-                                      <select name="gender" id="sexoR">
-                                          <option disabled="disabled" selected="selected">Sexo</option>
-                                          <option>Masculino</option>
-                                          <option>Femenino</option>
-                                          <option>Otro</option>
-                                      </select>
-                                      <div class="select-dropdown"></div>
-                                  </div>
-                              </div>
-        
-                              <!-- Campos para Password -->
-                              <div class="input-group">
-                                  <input class="input--style-3" type="password" placeholder="Password" name="password1" id="passwordR">
-                              </div>
-                              <div class="input-group">
-                                  <input class="input--style-3" type="password" placeholder="Repite el Password" name="password2">
-                              </div>
-        
-                              <!-- Botones Confirmar y Cancelar -->
-                              <div class="p-t-10">
-                                  <button class="btn btn--pill btn--green" type="button" id="btnRegistro">Confirmar</button>
-                              </div>
-                              <div class="p-t-10">
-                                <a class="btn btn--pill btn--red" type="submit" href="index.html">Cancelar</a>
-                            </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
+            <!--Primera parte del cuerpo-->
+            <div>
+              <a class="navbar-brand" href="editarPerfil.html">
+              <img
+                alt="foto perfil"
+                width="100"
+                height="100"
+                class="rounded-circle"
+                id="editarFotoPerfil"
+              />
+            </a>
+            <button class="btn btn--pill btn--blue" type="button" id="btnRegistro">Cambiar foto</button>
+            <button class="btn btn--pill btn--gray" type="button" data-toggle="modal" data-target="#modalConfirmar">Eliminar foto</button>
           </div>
+          <!--Fin Primera parte-->
+
+          <!--Segunda parte del cuerpo-->
+          <div class="row col-12">
+
+            <!--Editar nombre de usuario-->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Cambiar nombre de usuario</h5>
+                <div class="input-group">
+                  <input class="input--style-3" type="text" name="nombre" id="nombreE">
+                </div>
+              </div>
+            </div>
+
+            <!--Editar correo-->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Cambiar correo electronico</h5>
+                <div class="input-group">
+                  <input class="input--style-3" type="text" name="email" id="emailE">
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--Fin Segunda parte-->
+
+          <!--Tercera parte-->
+          <div>
+
+            <div class="card" id="cardJuegos">
+              <div class="card-body">
+                <h5 class="card-title">Cambiar juegos de interes</h5>
+                <input type="checkbox" id="lol" name="lol">
+                  <label for="lol"> League of Legends</label><br>
+                  <input type="checkbox" id="fortnite" name="fortnite">
+                  <label for="fortnite"> Fortnite</label><br>
+                  <input type="checkbox" id="warzone" name="warzone">
+                  <label for="warzone"> Warzone</label><br><br>
+              </div>
+            </div>
+
+          </div>
+          <!--Fin Tercera parte-->
+
+          <!--Cuarta parte-->
+          <div class="row col-12">
+
+            <!--Password 1-->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Cambiar Password</h5>
+                <div class="input-group">
+                  <input class="input--style-3" type="password" name="password" id="passwordE">
+                </div>
+              </div>
+            </div>
+
+            <!--Password 2-->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Confirmar Password</h5>
+                <div class="input-group">
+                  <input class="input--style-3" type="password" name="password" id="passwordE2">
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <!--Fin Cuarta parte-->
+
+          <!--Botones Confirmar/Cancelar edicion-->
+          <div>
+            <button class="btn btn--pill btn--green" type="button" id="btnConfirmarCambios">Confirmar</button>
+            <button class="btn btn--pill btn--red" type="button" id="btnCancelarCambios" href="Perfil.html">Cancelar</button>
+          </div>
+
         </div>
       </div>
       <!-- Fin del contenido -->
   </div>
-
-    <!--
-    <div class="container-fluid" id="contenedor"></div>
-    <div class="row no-gutters" id="fondoRegistro">
-      <div class="col no-gutters">
-        <div class="leftside d-flex justify-content-center" id="centroRegistro">
-
-          <ul class="columna-izquierda">
-            <li>
-              <div
-                class="card"
-                id="cardRegistro"
-                style="width: 50rem; height: 48rem">
-              <div class="card-body">
-                <h5 class="card-title">Editar perfil</h5>
-                <form>
-                  <a class="navbar-brand" href="#">
-                    <div class="contenedor">
-                      <figure>
-                        <img src="img/Kindred.jpeg" alt="Foto perfil">
-                        <div class="capa">
-                          
-                          <input type="file" name="imagen" id="imagen">
-                        </div>
-                      </figure>
-                    </div>
-                  <div class="form-group">
-                    <label for="nuevoNombre">Nuevo nombre de Usuario</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="nuevoNombre"
-                      aria-describedby="emailHelp"
-                    />
-                    <small id="emailHelp" class="form-text text-muted"
-                      >Se mostrará este nombre ante la comunidad</small
-                    >
-                  </div>
-                  <div class="form-group">
-                    <label for="nuevoNombre">Juegos</label><br>
-                    <input type="checkbox" name="Juegos" id="Juegps" value="fortnite">Fortnite <br>
-                    <input type="checkbox" name="Juegos" id="Juegps" value="lol">League of Legends <br>
-                    <input type="checkbox" name="Juegos" id="Juegps" value="warzone">Warzone <br>
-                    <small id="emailHelp" class="form-text text-muted"
-                      >Juegos de su interés</small
-                    >
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="exampleInputPassword1"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Vuelve a ingresar el Password</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="exampleInputPassword1"
-                    />
-                  </div>
-                </form>
-              </div> 
-              <div class="card-footer">
-                <button type="button" class="btn btn-primary">Confirmar</button>
-                <a type="submit" class="btn btn-danger" href="Perfil.html">
-                  Cancelar
-                </a>
-              </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      
-    </div>
-  -->
 
     <!-- Source section -->
     <script
@@ -209,4 +206,7 @@
       crossorigin="anonymous"
     ></script>
   </body>
+  <!--Script para elementos de usuario-->
+<script src="scripts/scriptsPrincipal.js"></script>
+<script src="scripts/scriptsEditarPerfil.js"></script>
 </html>

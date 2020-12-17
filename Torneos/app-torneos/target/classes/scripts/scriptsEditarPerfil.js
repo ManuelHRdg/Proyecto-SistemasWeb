@@ -1,13 +1,55 @@
+
+//Datos del usuario
 var bEditarImagenPerfil = document.getElementById("editarFotoPerfil").src = "img/3.jpg";
 
-var bEditarNombreUsuario = document.getElementById("nombreE").value = "EteSech";
 
-var bEditarEmail = document.getElementById("emailE").value = "correo@yes.no";
+/*
+    Cookie
+    */
+var sesion = getCookie("Sesion");
 
-var bEditarPassword = document.getElementById("passwordE").value = "password";
+/*
+    Poner Nombre en su campo
+    */
+var bEditarNombreUsuario = document.getElementById("nombreE").value = sesion;
 
-var bEditarPassword = document.getElementById("passwordE2").value = "password";
+/*
+    Poner Email en su campo
+    */
+var bEditarEmail = document.getElementById("emailE");
 
+    axios.post("http://localhost:4567/getCorreo", {
+        nombre: sesion
+    })
+    .then(function(response){
+        console.log(response.data);
+        bEditarEmail.value = response.data;
+    })
+    .catch(function(error){
+        console.log(error)
+    });
+
+/*
+    Poner Password en su campo
+    */
+var bEditarPassword = document.getElementById("passwordE")
+
+var bEditarPassword2 = document.getElementById("passwordE2")
+
+    axios.post("http://localhost:4567/getPassword", {
+        nombre: sesion
+    })
+    .then(function(response){
+        console.log(response.data);
+        bEditarPassword.value = response.data;
+        bEditarPassword2.value = response.data;
+    })
+    .catch(function(error){
+        console.log(error)
+    });
+
+
+//Eventos de botones
 $('#btnCambiarFoto').on('click', function() {
     $('#file').trigger('click');
 });
@@ -41,3 +83,36 @@ bConfirmarEditar.addEventListener('click',function(){
 $('#btnCancelarCambios').click(function() {
     window.location='Perfil.html';
   });
+
+
+
+  function deleteCookie(correo){
+    valor="";
+    expiracion="";
+    var d = new Date();
+    d.setTime(d.getTime()+expiracion*24*60*60*1000);
+    var expira = "expieres="+d.toUTCString();
+    document.cookie = correo+ "=" + valor +";" + expira +";path=/";
+}
+
+function setCookie(correo, valor, expiracion){
+    var d = new Date();
+    d.setTime(d.getTime()+expiracion*24*60*60*1000);
+    var expira = "expieres="+d.toUTCString();
+    document.cookie = correo+ "=" + valor +";" + expira +";path=/";
+}
+
+function getCookie(correo){
+    var nom= correo +"=";
+    var array = document.cookie.split(";");
+    for(var i=0; i<array.length; i++){
+        var c = array[i];
+        while (c.charAt(0)==" "){
+            c= c.substring(1);
+        }
+        if(c.indexOf(correo)==0){
+            return c.substring(correo.length + 1, c.length);
+        }
+    }
+    return  "";
+}

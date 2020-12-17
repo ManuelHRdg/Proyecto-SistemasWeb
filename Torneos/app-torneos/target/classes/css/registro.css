@@ -111,25 +111,25 @@
      Color 1
      */
   .bg-blue {
-    background: #8307bd;
+    background: #7405a8;
   }
   
     /*
     Color 2
     */
   .bg-red {
-    background: #eb1feb;
+    background: #1407c9;
   }
   
     /*
     Combinar ambos colores
     */
   .bg-gra-01 {
-    background: -webkit-gradient(linear, left bottom, left top, from(#eb63e4), to(#720eac));
-    background: -webkit-linear-gradient(bottom, #eb63e4 0%, #720eac 100%);
-    background: -moz-linear-gradient(bottom, #eb63e4 0%, #720eac 100%);
-    background: -o-linear-gradient(bottom, #eb63e4 0%, #720eac 100%);
-    background: linear-gradient(to top, #eb63e4 0%, #720eac 100%);
+    background: -webkit-gradient(linear, left bottom, left top, from(#1407c9), to(#7405a8));
+    background: -webkit-linear-gradient(bottom, #1407c9 0%, #7405a8 100%);
+    background: -moz-linear-gradient(bottom, #1407c9 0%, #7405a8 100%);
+    background: -o-linear-gradient(bottom, #1407c9 0%, #7405a8 100%);
+    background: linear-gradient(to top, #1407c9 0%, #7405a8 100%);
   }
   
   /* ==========================================================================
@@ -358,4 +358,12 @@
       padding-bottom: 45px;
     }
   }
-  
+
+
+  /* ==========================================================================
+     #ALERT
+     ========================================================================== */
+  #textoAlerta{
+    color: #fff;
+    background-color: #9b2424;
+  }

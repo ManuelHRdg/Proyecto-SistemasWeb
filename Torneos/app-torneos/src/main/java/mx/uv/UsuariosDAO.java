@@ -31,4 +31,50 @@ public class UsuariosDAO {
             throw new Exception("Error: No hay conexion" + e.getMessage());
         }
     }
+
+    public Usuarios consultarUsuario(String email) throws Exception{
+        Statement stm = null;
+        Connection con = null;
+        Usuarios usuario = null;
+        String sql = "SELECT * FROM usuario where email = '" + email + "';";
+        try {
+            con = new Conexion().conectarMySQL();
+            stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()){
+                usuario = new Usuarios(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+            }
+            stm.close();
+            rs.close();
+            con.close();
+        } catch (SQLException e) {
+            throw new Exception("Error: Método Create" + e.getMessage());
+        } catch (NullPointerException e){
+            throw new Exception("Error: No hay conexion" + e.getMessage());
+        }
+        return usuario;
+    }
+
+    public Usuarios consultarUsuarioNombre(String nombre) throws Exception{
+        Statement stm = null;
+        Connection con = null;
+        Usuarios usuario = null;
+        String sql = "SELECT * FROM usuario where nombre = '" + nombre + "';";
+        try {
+            con = new Conexion().conectarMySQL();
+            stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()){
+                usuario = new Usuarios(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+            }
+            stm.close();
+            rs.close();
+            con.close();
+        } catch (SQLException e) {
+            throw new Exception("Error: Método Create" + e.getMessage());
+        } catch (NullPointerException e){
+            throw new Exception("Error: No hay conexion" + e.getMessage());
+        }
+        return usuario;
+    }
 }

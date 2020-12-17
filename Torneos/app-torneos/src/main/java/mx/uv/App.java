@@ -68,15 +68,71 @@ public class App
             password = peticion.get("password").getAsString();
             sexo = peticion.get("sexo").getAsString();
 
-            System.out.println("Nombre: " + nombre);
-            System.out.println("Email: " + email);
-            System.out.println("Password: " + password);
-            System.out.println("Sexo: " + sexo);
+            UsuariosDAO usuarioDAO = new UsuariosDAO();
 
-            UsuariosDAO usuario = new UsuariosDAO();
-
-            usuario.createUsuario(nombre, email, password, sexo);
+            usuarioDAO.createUsuario(nombre, email, password, sexo);
             return nombre;
+        });
+
+        post("/login", (req, res) -> {
+            JsonParser parser = new JsonParser();
+            JsonElement arbol = parser.parse(req.body());
+            JsonObject peticion = arbol.getAsJsonObject();
+
+            String email;
+            String password;
+
+            email = peticion.get("email").getAsString();
+            password = peticion.get("password").getAsString();
+
+            UsuariosDAO usuarioDAO = new UsuariosDAO();
+            Usuarios usuario = (Usuarios)usuarioDAO.consultarUsuario(email);
+            if(usuario!=null){
+                if(usuario.getPassword().equals(password)){
+                    return usuario.getNombre();
+                }
+            }
+
+            return "0";
+
+        });
+
+        post("/getCorreo", (req, res) -> {
+            JsonParser parser = new JsonParser();
+            JsonElement arbol = parser.parse(req.body());
+            JsonObject peticion = arbol.getAsJsonObject();
+
+            String nombre;
+
+            nombre = peticion.get("nombre").getAsString();
+
+            UsuariosDAO usuarioDAO = new UsuariosDAO();
+            Usuarios usuario = (Usuarios)usuarioDAO.consultarUsuarioNombre(nombre);
+            if(usuario!=null){
+                return usuario.getEmail();
+            }
+
+            return "0";
+
+        });
+
+        post("/getPassword", (req, res) -> {
+            JsonParser parser = new JsonParser();
+            JsonElement arbol = parser.parse(req.body());
+            JsonObject peticion = arbol.getAsJsonObject();
+
+            String nombre;
+
+            nombre = peticion.get("nombre").getAsString();
+
+            UsuariosDAO usuarioDAO = new UsuariosDAO();
+            Usuarios usuario = (Usuarios)usuarioDAO.consultarUsuarioNombre(nombre);
+            if(usuario!=null){
+                return usuario.getPassword();
+            }
+
+            return "0";
+
         });
     }
 }

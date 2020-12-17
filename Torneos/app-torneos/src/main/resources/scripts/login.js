@@ -1,28 +1,30 @@
-var bEditarImagenPerfil = document.getElementById("editarFotoPerfil").src = "img/3.jpg";
+var bLogin = document.getElementById("btnLogin");
 
-var sesion = getCookie("Sesion");
+bLogin.addEventListener('click', function() {
+    var loginUsuario = document.getElementById("inputEmail").value;
+    var loginPassword = document.getElementById("inputPassword").value;
 
-var bNombreUsuario = document.getElementById("nombreP").innerHTML = sesion;
-
-var bEmail = document.getElementById("emailP");
-
-    axios.post("http://localhost:4567/getCorreo", {
-        nombre: sesion
+    axios.post("http://localhost:4567/login", {
+        email: loginUsuario,
+        password: loginPassword
     })
     .then(function(response){
         console.log(response.data);
-        bEmail.innerHTML = response.data;
+        if(response.data!="0"){
+            setCookie("Sesion", response.data, 0)   
+            location.href = "principal.html";
+        }
+        else{
+            setCookie("Sesion", "", 0)
+        }
     })
     .catch(function(error){
         console.log(error)
     });
-
-$('#editarPerfil').click(function() {
-    window.location='editarPerfil.html';
-  });
+})
 
 
-  function deleteCookie(correo){
+function deleteCookie(correo){
     valor="";
     expiracion="";
     var d = new Date();

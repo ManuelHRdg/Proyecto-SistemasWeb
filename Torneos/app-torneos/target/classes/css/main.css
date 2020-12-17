@@ -1,27 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+
+/*==========================================================================
+     #Navbar
+  ========================================================================== */
 .navbar {
   background-color: #171718 !important;
 }
 
+/*==========================================================================
+     #Botones de inicio y registro
+  ========================================================================== */
+
 #botonIngreso {
   color: rgb(0, 0, 0);
-  background-color: #1fcc44;
+  background-color: #4b4276;
   margin-right: 1rem;
 }
 
 #botonRegistro {
   color: rgb(0, 0, 0);
-  background-color: rgb(11, 122, 11);
+  background-color: #4b4276;
   margin-right: 2rem;
 }
 
+#botonIngreso:hover, #botonRegistro:hover{
+  background-color: #594f8d;
+} 
+
+/*==========================================================================
+     #Contenido
+  ========================================================================== */
+
 #contenedor {
+  height: 100%;
   width: 100%;
   padding-left: 0px;
   padding-right: 0px;
+  margin-top: 5rem;
 }
 
 #fondo {
-  margin-top: 5rem;
   background: #4169e1;
   background-position: center;
   background-size: cover;
@@ -31,6 +51,7 @@
   animation: animate 50s ease-in-out infinite;
 }
 
+/*Transiciones*/
 @keyframes animate {
   0%,
   100% {
@@ -47,18 +68,9 @@
   }
 }
 
-#contenedorRegistro {
-  margin-top: 0rem;
-}
-
-#fondoRegistro {
-  background: url("../img/4.jpg") #4169e1;
-  background-position: center;
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-attachment: fixed;
-}
-
+/*==========================================================================
+     #Cards
+  ========================================================================== */
 #cardRegistro {
   margin-top: 10rem;
 }
@@ -81,8 +93,4 @@
   color: white;
   margin-top: 5rem;
   background-color: rgb(49, 49, 49);
-}
-
-#centroRegistro {
-  height: 100vh;
 }

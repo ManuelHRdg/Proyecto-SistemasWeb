@@ -17,8 +17,8 @@
     <!--AXIOS-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- CSS editarPerfil -->
-    <link rel="stylesheet" href="../resources/css/principal.css">
-    <link href="css/editarPerfil.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/elementosPerfil.css" media="all">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   </head>
 
@@ -46,7 +46,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <button class="btn btn--pill btn--blue">Confirmar</button>
+          <button class="btn btn--pill btn--blue" id="confirmarEliminarFoto" data-dismiss="modal">Confirmar</button>
           <button class="btn btn--pill btn--red" data-dismiss="modal">
             Cancelar
           </button>
@@ -75,13 +75,13 @@
   
               <!-- Botones de Navegacion -->
           <ul>
-              <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-              <li><a href="Perfil.html"><i class="fas fa-user"></i>Perfil</a></li>
-              <li><a href=""><i class="fas fa-medal"></i>Mis Torneos</a></li>
-              <li><a href="#"><i class="fas fa-headset"></i>League of Legends</a></li>
-              <li><a href="#"><i class="fas fa-bus"></i>Fortnite</a></li>
-              <li><a href="#"><i class="fas fa-plane"></i>Warzone</a></li>
-              <li><a href="#"><i class="fas fa-door-closed"></i>Cerrar sesion</a></li>
+              <li><a id="home"><i class="fas fa-home"></i>Home</a></li>
+              <li><a id="miPerfil"><i class="fas fa-user"></i>Perfil</a></li>
+              <li><a id="misTorneos"><i class="fas fa-medal"></i>Mis Torneos</a></li>
+              <li><a id="torneosLeague"><i class="fas fa-headset"></i>League of Legends</a></li>
+              <li><a id="torneosFortnite"><i class="fas fa-bus"></i>Fortnite</a></li>
+              <li><a id="torneosWarzone"><i class="fas fa-plane"></i>Warzone</a></li>
+              <li><a id="cerrarSesion"><i class="fas fa-door-closed"></i>Cerrar sesion</a></li>
           </ul> 
           <!-- Fin Botones de Navegacion -->
       </div>
@@ -102,7 +102,8 @@
                 id="editarFotoPerfil"
               />
             </a>
-            <button class="btn btn--pill btn--blue" type="button" id="btnRegistro">Cambiar foto</button>
+            <button class="btn btn--pill btn--blue" type="button" id="btnCambiarFoto">Cambiar foto</button>
+            <input type="file"  accept="image/*" name="image" id="file" style="display: none;">
             <button class="btn btn--pill btn--gray" type="button" data-toggle="modal" data-target="#modalConfirmar">Eliminar foto</button>
           </div>
           <!--Fin Primera parte-->
@@ -133,7 +134,7 @@
           </div>
           <!--Fin Segunda parte-->
 
-          <!--Tercera parte-->
+          <!--Tercera parte del cuerpo-->
           <div>
 
             <div class="card" id="cardJuegos">
@@ -151,7 +152,7 @@
           </div>
           <!--Fin Tercera parte-->
 
-          <!--Cuarta parte-->
+          <!--Cuarta parte del cuerpo-->
           <div class="row col-12">
 
             <!--Password 1-->

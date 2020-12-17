@@ -11,13 +11,16 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <!--CSS-->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="../resources/css/principal.css">
-    <!--Fuentes especiales-->
-  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-  <!--AXIOS-->
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!--AXIOS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- CSS editarPerfil -->
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/elementosPerfil.css" media="all">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   </head>
 
   <body>
@@ -41,13 +44,13 @@
   
               <!-- Botones de Navegacion -->
           <ul>
-              <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-              <li><a href="Perfil.html"><i class="fas fa-user"></i>Perfil</a></li>
-              <li><a href=""><i class="fas fa-medal"></i>Mis Torneos</a></li>
-              <li><a href="#"><i class="fas fa-headset"></i>League of Legends</a></li>
-              <li><a href="#"><i class="fas fa-bus"></i>Fortnite</a></li>
-              <li><a href="#"><i class="fas fa-plane"></i>Warzone</a></li>
-              <li><a href="#"><i class="fas fa-door-closed"></i>Map</a></li>
+            <li><a id="home"><i class="fas fa-home"></i>Home</a></li>
+            <li><a id="miPerfil"><i class="fas fa-user"></i>Perfil</a></li>
+            <li><a id="misTorneos"><i class="fas fa-medal"></i>Mis Torneos</a></li>
+            <li><a id="torneosLeague"><i class="fas fa-headset"></i>League of Legends</a></li>
+            <li><a id="torneosFortnite"><i class="fas fa-bus"></i>Fortnite</a></li>
+            <li><a id="torneosWarzone"><i class="fas fa-plane"></i>Warzone</a></li>
+            <li><a id="cerrarSesion"><i class="fas fa-door-closed"></i>Cerrar sesion</a></li>
           </ul> 
           <!-- Fin Botones de Navegacion -->
       </div>
@@ -55,73 +58,73 @@
   
       <!-- Contenido -->
       <div class="main_content">
-          <div class="header">Por Demacia!!!.</div>  
-          <div class="info">
-            <div class="container-fluid"></div>
-    <div class="row no-gutters">
-      <div class="col no-gutters">
-        <div class="leftside d-flex justify-content-center" id="centroRegistro">
-
-          <ul class="columna-izquierda">
-            <li>
-              <div
-                class="card"
-                id="cardRegistro"
-                style="width: 40rem; height: 35rem"
-              >
-              <div class="card-body">
-                <h5 class="card-title">Perfil de Usuario</h5>
-                <form>
-                  <a class="navbar-brand" href="#">
-                    <img
-                      src="img/Kindred.jpeg"
-                      alt="foto perfil"
-                      width="200"
-                      height=""
-                      class="rounded-circle"
-                    />
-                    <label for="nuevoNombre">Nombre de Usuario</label>
-                  <div class="form-group">
-
-                    <small id="emailHelp" class="form-text text-muted"
-                    >
-                  </div>
-                  <div class="form-group">
-                    <label for="nuevoNombre">Juegos de su interés</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="nuevoNombre"
-                      aria-describedby="emailHelp"
-                    />
-                    <small id="emailHelp" class="form-text text-muted"
-                      
-                    >
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Torneos Activos</label>
-                    <small id="emailHelp" class="form-text text-muted"
-                    >Lista de torenos en los que participa</small
-                  >
-                  </div>
-                </form>
-              </div> 
-              <div class="card-footer">
-                <a type="submit" class="btn btn-info" href="editarPerfil.html">Editar Perfil
-                </a>
-                <a type="submit" class="btn btn-secondary" href="index.html">Regresar
-                </a>
-              </div>
-              </div>
-            </li>
-          </ul>
+        <div class="header">Por Demacia!!!.</div>  
+        <div class="info">
+          <!--Primera parte del cuerpo-->
+          <div>
+            
+            <img
+              alt="foto perfil"
+              width="100"
+              height="100"
+              class="rounded-circle"
+              id="editarFotoPerfil"
+            />
         </div>
-      </div>
+        <!--Fin Primera parte-->
 
+        <!--Segunda parte del cuerpo-->
+        <div class="row col-12">
+
+          <!--Editar nombre de usuario-->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Nombre de usuario</h5>
+              <div>
+                <p class="card-text" id="nombreP"></p>
+              </div>
+            </div>
+          </div>
+
+          <!--Editar correo-->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Correo electronico</h5>
+              <div>
+                <p class="card-text" id="emailP"></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--Fin Segunda parte-->
+
+        <!--Tercera parte del cuerpo-->
+        <div>
+
+          <div class="card" id="cardJuegos">
+            <div class="card-body">
+              <h5 class="card-title">Juegos de interes</h5>
+              <input type="checkbox" id="lol" name="lol">
+                <label for="lol"> League of Legends</label><br>
+                <input type="checkbox" id="fortnite" name="fortnite">
+                <label for="fortnite"> Fortnite</label><br>
+                <input type="checkbox" id="warzone" name="warzone">
+                <label for="warzone"> Warzone</label><br><br>
+            </div>
+          </div>
+
+        </div>
+        <!--Fin Tercera parte-->
+
+        <!--Boton Editar Perfil-->
+        <div>
+          <button class="btn btn--pill btn--blue" type="button" id="editarPerfil">Editar Perfil</button>
+        </div>
+
+      </div>
     </div>
-        </div>
-      </div>
-      <!-- Fin del contenido -->
+    <!-- Fin del contenido -->
   </div>
 
 
@@ -144,5 +147,7 @@
     ></script>
   </body>
   <!--Script para elementos de usuario-->
-<script src="scripts/scriptsPrincipal.js"></script>
+  <script src="scripts/scriptsPrincipal.js"></script>
+  <script src="scripts/scriptsEditarPerfil.js"></script>
+  <script src="scripts/scriptsPerfil.js"></script>
 </html>

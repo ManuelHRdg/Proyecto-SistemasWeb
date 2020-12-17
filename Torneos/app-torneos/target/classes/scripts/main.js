@@ -1,3 +1,6 @@
+
+document.title = "Torneos"
+
 function deleteCookie(correo){
     valor="";
     expiracion="";

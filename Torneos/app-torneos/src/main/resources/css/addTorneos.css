@@ -1,0 +1,59 @@
+/*  ==========================================================================
+    #Botones
+    ========================================================================== */
+     .btn {
+        display: inline-block;
+        line-height: 40px;
+        padding: 0 33px;
+        font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
+        cursor: pointer;
+        color: #fff;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        font-size: 18px;
+      }
+      
+      .btn--radius {
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+      
+      .btn--pill {
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+      }
+      
+      .btn--green {
+        background: #57b846;
+      }
+      
+      .btn--green:hover {
+        background: #4dae3c;
+      }
+    
+      .btn--red {
+        background: #b83232;
+      }
+    
+      .btn--red:hover {
+        background: #9b2424;
+      }
+
+
+ /* ==========================================================================
+    #Card
+    ========================================================================== */
+  .card{
+    background-color: #9b9da1;
+  }
+  .card .card-title{
+    color: #ecf0f1;
+  }
+
+  .card .card-subtitle{
+    color: #fafbfc;
+  }

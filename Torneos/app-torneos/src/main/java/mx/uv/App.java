@@ -217,6 +217,8 @@ public class App
 
         });
 
+
+        //Metodo para crear un nuevo torneo
         post("/crearTorneo", (req, res) ->{
 
             JsonParser parser = new JsonParser();
@@ -226,18 +228,27 @@ public class App
 
             String juego;
             String nombre;
+            String fecha;
+            String participacion;
             String descripcion;
             String urlImagen;
             int capacidad;
 
+            //Obtiene los parametros necesarios para generar un torneo
             juego = peticion.get("juego").getAsString();
             nombre = peticion.get("nombre").getAsString();
+            fecha = peticion.get("fecha").getAsString();
+            participacion = peticion.get("participacion").getAsString();
             descripcion = peticion.get("descripcion").getAsString();
             urlImagen = peticion.get("urlImagen").getAsString();
             capacidad = peticion.get("capacidad").getAsInt();
 
+            //En descripcion van los datos del tipo de participacion y la fecha del torneo
+            descripcion = "Fecha: " + fecha + "\n" + participacion + ". \n" + descripcion;
+
             TorneosDAO torneoDAO = new TorneosDAO();
 
+            //Metodo para crear el torneo en la DB
             torneoDAO.createTorneo(juego, nombre, descripcion, urlImagen, capacidad);
             return nombre;
         });

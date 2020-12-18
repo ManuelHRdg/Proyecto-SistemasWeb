@@ -19,7 +19,8 @@
   <!--AXIOS-->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <!-- CSS Registro -->
+  <!-- CSS  -->
+  <link rel="stylesheet" href="css/addTorneos.css">
 </head>
 <body>
 
@@ -118,14 +119,15 @@
                       <div class="card-body">
                         <h5 class="card-title">Tipo de participación</h5>
                         <div class="input-group">
-                            <div class="input-group">
-                                <select name="addType" id="addType">
-                                  <option value="addNew2">Selecionar Tipo</option>
-                                  <option value="addSingle">Solitario</option>
-                                  <option value="addDuo">Parejas</option>
-                                  <option value="addTeam">Escuadron</option>
+                          <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="participaciones" id="addType">
+                                  <option disabled="disabled" selected="selected">Selecionar Tipo</option>
+                                  <option>Solitario</option>
+                                  <option>Parejas</option>
+                                  <option>Escuadron</option>
                                 </select>
-                              </div>
+                                <div class="select-dropdown"></div>
+                          </div>
                         </div>
                       </div>
                     </div>

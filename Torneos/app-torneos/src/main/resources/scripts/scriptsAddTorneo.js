@@ -10,6 +10,8 @@ bConfirmarTorneo.addEventListener('click',function(){
 
     if(bNuevoNombreTorneo.length == 0 ||
         bNuevoJuego.length == 0 ||
+        bNuevoFechaTorneo.length == 0 ||
+        bNuevoParticipacion.length == 0 ||
         bNuevoMaxTeam.length == 0 ||
         bNuevoMaxParticipacion.length == 0 ){ 
             alerta.style.display = 'inline';
@@ -19,6 +21,8 @@ bConfirmarTorneo.addEventListener('click',function(){
             axios.post("http://localhost:4567/crearTorneo", {
                 juego: bNuevoJuego,
                 nombre: bNuevoNombreTorneo,
+                fecha: bNuevoFechaTorneo,
+                participacion: bNuevoParticipacion,
                 descripcion: bNuevoMaxTeam,
                 urlImagen: "img/1.jpg",
                 capacidad: bNuevoMaxParticipacion

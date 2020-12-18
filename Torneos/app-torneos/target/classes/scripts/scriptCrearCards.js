@@ -1,3 +1,5 @@
+
+//Funcion para crear cartas dinamicamente
 function crearCards(respuesta){
     var i=0;
         var count = 0
@@ -77,6 +79,7 @@ function crearCards(respuesta){
         }
         var i=0;
         while(i<count){
+            //Crea una carta por cada torneo
             var templateString = '<div class="card">    <img class="card-img-top" src="' + torneos[i][0] + '" alt="Card image cap">' 
             + '<div class="card-body">  <h5>' + torneos[i][1] + '</h5><p class="card-text">' 
             + '<div> '+ torneos[i][2] +'</div>' 
@@ -86,6 +89,7 @@ function crearCards(respuesta){
             i++;
         }
         if(count == 0){
+            //Crea la carta por defecto de torneos no encontrados
             var templateString = '<div class="card">    <img class="card-img-top" src="img/NoTorneo.jpg" alt="Card image cap">' 
             + '<div class="card-body">  <h5>No hay Torneo disponible</h5></div> </div>';
             $('#test').append(templateString);

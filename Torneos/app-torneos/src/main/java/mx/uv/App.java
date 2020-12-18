@@ -165,14 +165,17 @@ public class App
 
         });
 
+        //Metodo para eliminar un perfil
         post("/eliminarPerfil", (req, res) -> {
             JsonParser parser = new JsonParser();
             JsonElement arbol = parser.parse(req.body());
             JsonObject peticion = arbol.getAsJsonObject();
 
+            //Recibe el nombre de perfil
             String nombre;
             nombre = peticion.get("nombre").getAsString();
 
+            //Aplica el metodo delete
             UsuariosDAO usuarioDAO = new UsuariosDAO();
             usuarioDAO.delete(nombre);
 

@@ -171,6 +171,7 @@ public class App
 
             List<String[]> arrayElementos = new ArrayList<String[]>();
 
+            String respuesta = "";
             while(listaTorneos.size() > 0){
                 String[] aux = new String[4];
                 aux[0] = listaTorneos.get(0).getUrlImagen();
@@ -180,15 +181,12 @@ public class App
 
                 arrayElementos.add(aux);
 
+                respuesta += "(" + aux[0] + ")" + "(" + aux[1] + ")" + "(" + aux[2] + ")" + "(" + aux[3] + ")";
                 listaTorneos.remove(0);
 
             }
-
-            System.out.println(arrayElementos.get(0)[0]);
-            System.out.println(arrayElementos.get(0)[1]);
-            System.out.println(arrayElementos.get(0)[2]);
-            System.out.println(arrayElementos.get(0)[3]);
-            return arrayElementos.get(0);
+            
+            return respuesta;
 
         });
     }

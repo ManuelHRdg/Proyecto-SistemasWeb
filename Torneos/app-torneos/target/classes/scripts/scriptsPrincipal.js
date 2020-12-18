@@ -8,46 +8,16 @@ var bNombreUsuario = document.getElementById("usuario").innerHTML = getCookie("S
 //Botones de navegacion del Sidebar
 var bBotonHome = document.getElementById("home").href = "principal.html";
 var bBotonMiPerfil = document.getElementById("miPerfil").href = "Perfil.html";
-var bBotonMisTorneos = document.getElementById("misTorneos").href = "Perfil.html";
+var bBotonMisTorneos = document.getElementById("misTorneos").href = "misTorneos.html";
 var bBotonTorneosLeague = document.getElementById("torneosLeague").href = "LeagueOfLegends.html";
-var bBotonTorneosFortnite = document.getElementById("torneosFortnite").href = "index.html";
-var bBotonTorneosWarzone = document.getElementById("torneosWarzone").href = "index.html";
+var bBotonTorneosFortnite = document.getElementById("torneosFortnite").href = "Fortnite.html";
+var bBotonTorneosWarzone = document.getElementById("torneosWarzone").href = "Warzone.html";
 var bBotonCerrarSesion = document.getElementById("cerrarSesion");
 
 
 
+//Cierra la sesion y regresa al Index
 bBotonCerrarSesion.addEventListener('click', function(){
     deleteCookie("Sesion");
     location.href = "index.html";
 })
-
-function deleteCookie(correo){
-    valor="";
-    expiracion="";
-    var d = new Date();
-    d.setTime(d.getTime()+expiracion*24*60*60*1000);
-    var expira = "expieres="+d.toUTCString();
-    document.cookie = correo+ "=" + valor +";" + expira +";path=/";
-}
-
-function setCookie(correo, valor, expiracion){
-    var d = new Date();
-    d.setTime(d.getTime()+expiracion*24*60*60*1000);
-    var expira = "expieres="+d.toUTCString();
-    document.cookie = correo+ "=" + valor +";" + expira +";path=/";
-}
-
-function getCookie(correo){
-    var nom= correo +"=";
-    var array = document.cookie.split(";");
-    for(var i=0; i<array.length; i++){
-        var c = array[i];
-        while (c.charAt(0)==" "){
-            c= c.substring(1);
-        }
-        if(c.indexOf(correo)==0){
-            return c.substring(correo.length + 1, c.length);
-        }
-    }
-    return  "";
-}

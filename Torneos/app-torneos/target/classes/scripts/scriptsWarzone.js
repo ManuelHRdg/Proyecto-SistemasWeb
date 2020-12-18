@@ -3,7 +3,7 @@ var torneos=new Array();
 var torneo=new Array();
 
 axios.post("http://localhost:4567/torneos", {
-    juego: "lol"
+    juego: "warzone"
 })
 .then(function(response){
     var respuesta=response.data;

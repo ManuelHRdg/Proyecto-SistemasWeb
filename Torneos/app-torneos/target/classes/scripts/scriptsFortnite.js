@@ -1,0 +1,103 @@
+var torneos=new Array();
+var torneo=new Array();
+
+axios.post("http://localhost:4567/torneos", {
+    juego: "fortnite"
+})
+.then(function(response){
+    var respuesta=response.data;
+        var i=0;
+        var count = 0
+        var escribiendo=0;
+        var actual="";
+        var urlImagen="";
+        var nombreTorneo="";
+        var descripcion="";
+        var capacidad="";
+        var j=0;
+        while(respuesta[j]!=null){
+            if(respuesta[j]!=")"){
+                j++;
+            }else{
+                count++;
+                j++;
+            }
+        }
+        count = count/4;
+        j = 0
+        while(i<count){
+            while(respuesta[j]!=")"){
+                if(escribiendo!=0){
+                    actual=actual+respuesta[j]
+                }
+                if(respuesta[j]=="("){
+                    escribiendo=1;
+                }
+                j++;
+            }
+            j++;
+            urlImagen=actual;
+            escribiendo=0;
+            actual="";
+            while(respuesta[j]!=")"){
+                if(escribiendo!=0){
+                    actual=actual+respuesta[j]
+                }
+                if(respuesta[j]=="("){
+                    escribiendo=1;
+                }
+                j++;
+            }
+            j++;
+            nombreTorneo=actual;
+            escribiendo=0;
+            actual="";
+            while(respuesta[j]!=")"){
+                if(escribiendo!=0){
+                    actual=actual+respuesta[j]
+                }
+                if(respuesta[j]=="("){
+                    escribiendo=1;
+                }
+                j++;
+            }
+            j++;
+            descripcion=actual;
+            escribiendo=0;
+            actual="";
+            while(respuesta[j]!=")"){
+                if(escribiendo!=0){
+                    actual=actual+respuesta[j]
+                }
+                if(respuesta[j]=="("){
+                    escribiendo=1;
+                }
+                j++;
+            }
+            j++;
+            capacidad=actual;
+            torneo=[urlImagen,nombreTorneo, descripcion, capacidad];
+            escribiendo=0;
+            actual="";
+            torneos.push(torneo);
+            i++;
+        }
+        var i=0;
+        while(i<count){
+            var templateString = '<div class="card">    <img class="card-img-top" src="' + torneos[i][0] + '" alt="Card image cap">' 
+            + '<div class="card-body">  <h5>' + torneos[i][1] + '</h5><p class="card-text">' 
+            + '<div> '+ torneos[i][2] +'</div>' 
+            + '<div>Jugadores maximos: '+ torneos[i][3] +'</div> </p> <a href="registro.html" class="btn btn-primary">Participar!</a> </div> </div>';
+            $('#test').append(templateString);
+
+            i++;
+        }
+        if(count == 0){
+            var templateString = '<div class="card">    <img class="card-img-top" src="img/default-profile.png" alt="Card image cap">' 
+            + '<div class="card-body">  <h5>No hay Torneo disponible</h5></div> </div>';
+            $('#test').append(templateString);
+        }
+})
+.catch(function(error){
+    console.log(error);
+});

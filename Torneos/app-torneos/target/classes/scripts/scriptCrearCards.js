@@ -86,7 +86,7 @@ function crearCards(respuesta){
             i++;
         }
         if(count == 0){
-            var templateString = '<div class="card">    <img class="card-img-top" src="img/default-profile.png" alt="Card image cap">' 
+            var templateString = '<div class="card">    <img class="card-img-top" src="img/NoTorneo.jpg" alt="Card image cap">' 
             + '<div class="card-body">  <h5>No hay Torneo disponible</h5></div> </div>';
             $('#test').append(templateString);
         }

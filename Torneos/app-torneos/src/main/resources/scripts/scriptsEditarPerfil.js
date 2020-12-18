@@ -43,6 +43,10 @@ var bEditarPassword2 = document.getElementById("passwordE2")
 
 
 //Eventos de botones
+
+
+
+//Evento para abrir el explorador de archivos
 $('#btnCambiarFoto').on('click', function() {
     $('#file').trigger('click');
 });
@@ -92,12 +96,14 @@ bConfirmarEditar.addEventListener('click',function(){
                 document.getElementById("textoAlerta").innerHTML = "Los Passwords no coinciden";
             }else{
     axios.post("http://localhost:4567/editar",{
+    id: sesion,
     nombre: document.getElementById("nombreE").value,
     email: document.getElementById("emailE").value,
     password: document.getElementById("passwordE").value,
     })
     .then(function(response){
-
+        setCookie("Sesion", response.data, 0)
+        window.location='Perfil.html';
     })
     .catch(function(error) {
         console.log(error)

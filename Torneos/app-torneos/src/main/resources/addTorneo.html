@@ -75,12 +75,15 @@
                       <div class="card-body">
                         <h5 class="card-title">Juego del Torneo</h5>
                         <div class="input-group">
-                          <select name="addJuego" id="addJuego">
-                            <option value="addNew">Selecionar Juego</option>
-                            <option value="addLeagueofLegends">League of Legends</option>
-                            <option value="addFortnite">Fortnite</option>
-                            <option value="addWarzone">Warzones</option>
-                          </select>
+                          <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="juego" id="juegoSeleccionado">
+                                <option disabled="disabled" selected="selected">Juego del Torneo</option>
+                                <option>League of Legends</option>
+                                <option>Fortnite</option>
+                                <option>Warzone</option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
                         </div>
                       </div>
                     </div>
@@ -149,7 +152,7 @@
                   <!--Botones Confirmar/Cancelar edicion-->
                   <div>
                     <button class="btn btn--pill btn--green" type="button" id="btnConfirmarCambios">Confirmar</button>
-                    <button class="btn btn--pill btn--red" type="button" id="btnCancelarCambios" href="Perfil.html">Cancelar</button>
+                    <button class="btn btn--pill btn--red" type="button" id="btnCancelarCambios">Cancelar</button>
                   </div>
         
                 </div>

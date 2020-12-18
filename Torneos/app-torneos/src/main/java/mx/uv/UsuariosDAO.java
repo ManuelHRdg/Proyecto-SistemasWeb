@@ -32,6 +32,23 @@ public class UsuariosDAO {
         }
     }
 
+    public void updateUsuario(String id, String nombre, String email, String password) throws Exception{
+        Statement stm = null;
+        Connection con = null;
+        String sql = "UPDATE usuario SET nombre = '" + nombre + "', email = '" + email + "', password = '" + password + "' where nombre = '" + id + "';";
+        try {
+            con = new Conexion().conectarMySQL();
+            stm = con.createStatement();
+            stm.execute(sql);
+            stm.close();
+            con.close();
+        } catch (SQLException e) {
+            throw new Exception("Error: Método Create" + e.getMessage());
+        } catch (NullPointerException e){
+            throw new Exception("Error: No hay conexion" + e.getMessage());
+        }
+    }
+
     public Usuarios consultarUsuario(String email) throws Exception{
         Statement stm = null;
         Connection con = null;

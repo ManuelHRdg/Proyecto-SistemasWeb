@@ -81,6 +81,29 @@ public class App
             return nombre;
         });
 
+        //Funcion para editar el perfil del usuario
+        post("/editar", (req, res) ->{
+
+            JsonParser parser = new JsonParser();
+            JsonElement arbol = parser.parse(req.body());
+            JsonObject peticion = arbol.getAsJsonObject();
+
+            String id;
+            String nombre;
+            String email;
+            String password;
+
+            id = peticion.get("id").getAsString();
+            nombre = peticion.get("nombre").getAsString();
+            email = peticion.get("email").getAsString();
+            password = peticion.get("password").getAsString();
+
+            UsuariosDAO usuarioDAO = new UsuariosDAO();
+
+            usuarioDAO.updateUsuario(id, nombre, email, password);
+            return nombre;
+        });
+
         post("/login", (req, res) -> {
             JsonParser parser = new JsonParser();
             JsonElement arbol = parser.parse(req.body());
@@ -156,6 +179,8 @@ public class App
             return "0";
         });
 
+
+        //Metodo para recuperar los datos de los torneos del juego determinado
         post("/torneos", (req, res) ->{
             JsonParser parser = new JsonParser();
             JsonElement arbol = parser.parse(req.body());
@@ -173,6 +198,7 @@ public class App
 
             String respuesta = "";
             while(listaTorneos.size() > 0){
+                //Agrega los datos del torneo a un array de Strings
                 String[] aux = new String[4];
                 aux[0] = listaTorneos.get(0).getUrlImagen();
                 aux[1] = listaTorneos.get(0).getNombre();
@@ -181,11 +207,12 @@ public class App
 
                 arrayElementos.add(aux);
 
+                //Agrega al String los datos del torneo en el ciclo actual
                 respuesta += "(" + aux[0] + ")" + "(" + aux[1] + ")" + "(" + aux[2] + ")" + "(" + aux[3] + ")";
                 listaTorneos.remove(0);
 
             }
-            
+
             return respuesta;
 
         });

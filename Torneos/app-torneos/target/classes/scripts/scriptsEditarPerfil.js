@@ -84,34 +84,38 @@ bConfirmarEditar.addEventListener('click',function(){
     bEditarEmail = document.getElementById("emailE").value;
     bEditarPassword = document.getElementById("passwordE").value;
     bEditarPassword2 = document.getElementById("passwordE2").value;
+    //Se comprueba que todos los campos esten completos
     if(bEditarNombreUsuario.length == 0 ||
         bEditarEmail.length == 0 ||
         bEditarPassword.length == 0 ||
         bEditarPassword2.length == 0 ){ 
+            //Se muestra alerta por campos vacios
             alerta.style.display = 'inline';
             document.getElementById("textoAlerta").innerHTML = "Todos los campos deben estar completos";
-}else{
-            if(bEditarPassword != bEditarPassword2){
-                alerta.style.display = 'inline';
-                document.getElementById("textoAlerta").innerHTML = "Los Passwords no coinciden";
-            }else{
-    axios.post("http://localhost:4567/editar",{
-    id: sesion,
-    nombre: document.getElementById("nombreE").value,
-    email: document.getElementById("emailE").value,
-    password: document.getElementById("passwordE").value,
-    })
-    .then(function(response){
-        setCookie("Sesion", response.data, 0)
-        window.location='Perfil.html';
-    })
-    .catch(function(error) {
-        console.log(error)
-    }); 
-            }
-        } 
+    }else{
+        //Se comprueba que los passwords coincidan
+        if(bEditarPassword != bEditarPassword2){
+            //Se muestra alerta por passwords diferentes
+            alerta.style.display = 'inline';
+            document.getElementById("textoAlerta").innerHTML = "Los Passwords no coinciden";
+        }else{
+            axios.post("http://localhost:4567/editar",{
+            id: sesion,
+            nombre: document.getElementById("nombreE").value,
+            email: document.getElementById("emailE").value,
+            password: document.getElementById("passwordE").value,
+            })
+            .then(function(response){
+                setCookie("Sesion", response.data, 0)
+                window.location='Perfil.html';
+            })
+            .catch(function(error) {
+                console.log(error)
+            }); 
+        }
+    } 
 
-    });
+});
 
 
 //Cancelar cambios y situarse en el perfil

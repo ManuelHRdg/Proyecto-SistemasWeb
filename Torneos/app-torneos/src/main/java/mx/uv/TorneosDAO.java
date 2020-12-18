@@ -12,6 +12,23 @@ import javax.swing.text.StyledEditorKit.BoldAction;
 import java.sql.*;
 
 public class TorneosDAO {
+
+    public void createTorneo(String juego, String nombre, String descripcion, String urlImagen, int capacidad) throws Exception{
+        Statement stm = null;
+        Connection con = null;
+        String sql = "INSERT INTO torneos VALUES( null, '" + juego + "','" + nombre + "','" + descripcion + "','" + urlImagen + "', " + capacidad + ");";
+        try {
+            con = new Conexion().conectarMySQL();
+            stm = con.createStatement();
+            stm.execute(sql);
+            stm.close();
+            con.close();
+        } catch (SQLException e) {
+            throw new Exception("Error: Método Create" + e.getMessage());
+        } catch (NullPointerException e){
+            throw new Exception("Error: No hay conexion" + e.getMessage());
+        }
+    }
     
     public List<Torneos> consultarJuego(String juego) throws Exception{
 

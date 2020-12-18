@@ -216,5 +216,30 @@ public class App
             return respuesta;
 
         });
+
+        post("/crearTorneo", (req, res) ->{
+
+            JsonParser parser = new JsonParser();
+            JsonElement arbol = parser.parse(req.body());
+            JsonObject peticion = arbol.getAsJsonObject();
+
+
+            String juego;
+            String nombre;
+            String descripcion;
+            String urlImagen;
+            int capacidad;
+
+            juego = peticion.get("juego").getAsString();
+            nombre = peticion.get("nombre").getAsString();
+            descripcion = peticion.get("descripcion").getAsString();
+            urlImagen = peticion.get("urlImagen").getAsString();
+            capacidad = peticion.get("capacidad").getAsInt();
+
+            TorneosDAO torneoDAO = new TorneosDAO();
+
+            torneoDAO.createTorneo(juego, nombre, descripcion, urlImagen, capacidad);
+            return nombre;
+        });
     }
 }

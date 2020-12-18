@@ -12,9 +12,14 @@
     <!--Fuentes especiales-->
 	<link rel="stylesheet" href="../resources/css/principal.css">
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+  <!-- Font special for pages-->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   
   <!--AXIOS-->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- CSS Registro -->
 </head>
 <body>
 
@@ -65,7 +70,8 @@
                         <div class="card-body">
                           <h5 class="card-title">Nombre nuevo torneo</h5>
                           <div class="input-group">
-                            <input class="input--style-3" type="addTorneo" name="addTorneo" id="addTorneo">
+                            <input class="input--style-3" type="text" name="torneo" id="agregarTorneo">
+                          </div>
                         </div>
                     </div>
                  
@@ -92,7 +98,7 @@
                   <!--Fin Segunda parte-->
         
                   <!--Tercera parte del cuerpo-->
-                  <div>
+                  <div class="row col-12">
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Fecha del torneo</h5>
@@ -128,13 +134,19 @@
                     <!--Máximo de Equipos-->
                     <div class="card">
                       <div class="card-body">
-                        <h5 class="card-title">Máximo de Equipos</h5>
+                        <h5 class="card-title">Descripcion del torneo</h5>
                         <div class="input-group">
-                          <input class="input--style-3" type="maxTeam" name="maxTeam" id="maxTeam">
+                          <input class="input--style-3" type="text" name="descripcion" id="descripcionTorneo">
                         </div>
                       </div>
                     </div>
+        
+                    
+                  </div>
+                  <!--Fin Cuarta parte-->
 
+                  <!--Quinta Parte-->
+                  <div>
                     <!--Máximo Participantes-->
                     <div class="card">
                       <div class="card-body">
@@ -144,10 +156,10 @@
                         </div>
                       </div>
                     </div>
-        
-                    
+
+
                   </div>
-                  <!--Fin Cuarta parte-->
+                  <!--Fin Quinta Parte-->
         
                   <!--Botones Confirmar/Cancelar edicion-->
                   <div>
@@ -189,4 +201,5 @@ crossorigin="anonymous"
 <!--Script para elementos de usuario-->
 <script src="scripts/scriptsCookies.js"></script>
 <script src="scripts/scriptsAdmin.js"></script>
+<script src="scripts/scriptsAddTorneo.js"></script>
 </html>

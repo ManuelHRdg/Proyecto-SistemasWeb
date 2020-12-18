@@ -9,7 +9,6 @@ bRegistro.addEventListener('click',function(){
     var passwordRegistro2 = document.getElementById("passwordR2").value;
     var sexoRegistro = document.getElementById("sexoR").value;
 
-    console.log(nombreRegistro.value);
 
     if(nombreRegistro.length == 0 ||
         emailRegistro.length == 0 ||

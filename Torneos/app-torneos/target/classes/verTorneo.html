@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <!--Bootstrap-->
+  <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!--Fuentes especiales-->
+	<link rel="stylesheet" href="../resources/css/principal.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  
+  <!--AXIOS-->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- Side Bar Section -->
+    <div class="sidebar">
+        <h2>
+            <a class="navbar-brand" href="editarPerfil.html">
+                <img
+                  alt="foto perfil"
+                  width="100"
+                  height="100"
+                  class="rounded-circle"
+                  id="fotoPerfil"
+                />
+              </a>
+              <div id="admin"></div>
+        </h2>
+
+            <!-- Botones de Navegacion -->
+        <ul>
+          <li><a id="home"><i class="fas fa-home"></i>Home</a></li>
+          <li><a id="addTorneo"><i class="fas fa-user"></i>Agregar Torneos</a></li>
+          <li><a id="verTorneos"><i class="fas fa-medal"></i>Ver Torneos</a></li>
+          <li><a id="cerrarSesion" href="#"><i class="fas fa-door-closed"></i>Cerrar sesion</a></li>
+        </ul> 
+        <!-- Fin Botones de Navegacion -->
+    </div>
+    <!-- Fin de Side Bar -->
+
+    <!-- Contenido -->
+    <div class="main_content">
+        <div class="header">Por Demacia!!!.</div>  
+        <div class="info">
+          <div>Torneos disponibles.</div>
+
+          <div class="card">
+            <div class="card-body">
+                <p style="color:rgb(0, 0, 0);">Vista de Torneos disponibles</p>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Fin del contenido -->
+</div>
+
+<!-- Source section -->
+<script
+src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+crossorigin="anonymous"
+></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+crossorigin="anonymous"
+></script>
+
+</body>
+<!--Script para elementos de usuario-->
+<script src="scripts/main.js"></script>
+<script src="scripts/scriptsAdmin.js"></script>
+</html>

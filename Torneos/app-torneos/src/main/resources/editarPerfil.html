@@ -23,18 +23,18 @@
 
   <body>
 
-    <!-- Modal -->
+    <!-- Modal Eliminar Foto -->
     <div
     class="modal fade"
     id="modalConfirmar"
     tabindex="-1"
-    aria-labelledby="exampleModalLabel"
+    aria-labelledby="modalEliminarFoto"
     aria-hidden="true"
   >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Confirmar eliminar foto de perfil</h5>
+          <h5 class="modal-title" id="modalEliminarFoto">Confirmar eliminar foto de perfil</h5>
           <button
             type="button"
             class="close"
@@ -54,6 +54,38 @@
     </div>
   </div>
   <!-- Fin Modal -->
+
+  <!-- Modal Eliminar Perfil -->
+  <div
+  class="modal fade"
+  id="modalConfirmarEliminarPerfil"
+  tabindex="-1"
+  aria-labelledby="modalEliminarPerfil"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEliminarPerfil">De verdad deseas eliminar el perfil</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn--pill btn--blue" id="confirmarEliminarPerfil" data-dismiss="modal">Confirmar</button>
+        <button class="btn btn--pill btn--red" data-dismiss="modal">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Modal -->
 
     <div class="wrapper">
 
@@ -104,6 +136,7 @@
             <button class="btn btn--pill btn--blue" type="button" id="btnCambiarFoto">Cambiar foto</button>
             <input type="file"  accept="image/*" name="image" id="file" style="display: none;">
             <button class="btn btn--pill btn--gray" type="button" data-toggle="modal" data-target="#modalConfirmar">Eliminar foto</button>
+            <button class="btn btn--pill btn--red" type="button" data-toggle="modal" data-target="#modalConfirmarEliminarPerfil">Eliminar Perfil</button>
           </div>
           <!--Fin Primera parte-->
 
@@ -174,6 +207,11 @@
               </div>
             </div>
 
+            <!--Alerta de error-->
+            <div id="alerta">
+              <div class="alert alert-danger" role="alert" id="textoAlerta">
+              </div>
+            </div>
 
           </div>
           <!--Fin Cuarta parte-->

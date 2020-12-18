@@ -77,4 +77,21 @@ public class UsuariosDAO {
         }
         return usuario;
     }
+
+    public void delete(String nombre) throws Exception{
+        Statement stm = null;
+        Connection con = null;
+        String sql = "DELETE FROM usuario where nombre = '" + nombre + "';";
+        try {
+            con = new Conexion().conectarMySQL();
+            stm = con.createStatement();
+            stm.execute(sql);
+            stm.close();
+            con.close();
+        } catch (SQLException e) {
+            throw new Exception("Error: Método Delete" + e.getMessage());
+        } catch (NullPointerException e){
+            throw new Exception("Error: No hay conexion" + e.getMessage());
+        }
+    }
 }

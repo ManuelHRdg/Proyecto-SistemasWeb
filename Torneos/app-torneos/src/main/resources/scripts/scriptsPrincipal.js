@@ -9,7 +9,7 @@ var bNombreUsuario = document.getElementById("usuario").innerHTML = getCookie("S
 var bBotonHome = document.getElementById("home").href = "principal.html";
 var bBotonMiPerfil = document.getElementById("miPerfil").href = "Perfil.html";
 var bBotonMisTorneos = document.getElementById("misTorneos").href = "Perfil.html";
-var bBotonTorneosLeague = document.getElementById("torneosLeague").href = "index.html";
+var bBotonTorneosLeague = document.getElementById("torneosLeague").href = "LeagueOfLegends.html";
 var bBotonTorneosFortnite = document.getElementById("torneosFortnite").href = "index.html";
 var bBotonTorneosWarzone = document.getElementById("torneosWarzone").href = "index.html";
 var bBotonCerrarSesion = document.getElementById("cerrarSesion");

@@ -14,6 +14,8 @@ import java.sql.*;
 
 public class AdminsDAO {
 
+
+    //Metodo para recuperar los administradores registrados
     public Admins consultarAdmin(String id) throws Exception{
         Statement stm = null;
         Connection con = null;

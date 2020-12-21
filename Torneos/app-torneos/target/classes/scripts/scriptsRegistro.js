@@ -22,7 +22,7 @@ bRegistro.addEventListener('click',function(){
                 alerta.style.display = 'inline';
                 document.getElementById("textoAlerta").innerHTML = "Los Passwords no coinciden";
             }else{
-            axios.post("http://localhost:4567/registrarse",{
+            axios.post("https://torneos-equipo6.herokuapp.com/registrarse",{
             nombre: nombreRegistro,
             email: emailRegistro,
             password: passwordRegistro,

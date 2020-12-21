@@ -18,7 +18,7 @@ bConfirmarTorneo.addEventListener('click',function(){
             document.getElementById("textoAlerta").innerHTML = "Todos los campos deben estar completos";
 
         }else{
-            axios.post("http://localhost:4567/crearTorneo", {
+            axios.post("https://torneos-equipo6.herokuapp.com/crearTorneo", {
                 juego: bNuevoJuego,
                 nombre: bNuevoNombreTorneo,
                 fecha: bNuevoFechaTorneo,

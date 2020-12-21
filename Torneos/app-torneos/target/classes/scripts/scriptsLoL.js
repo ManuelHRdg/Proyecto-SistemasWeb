@@ -2,7 +2,7 @@
 var torneos=new Array();
 var torneo=new Array();
 
-axios.post("http://localhost:4567/torneos", {
+axios.post("https://torneos-equipo6.herokuapp.com/torneos", {
     juego: "League of Legends"
 })
 .then(function(response){

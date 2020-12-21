@@ -7,7 +7,7 @@ bLogin.addEventListener('click', function() {
     var loginPassword = document.getElementById("inputPassword").value;
 
     //Llamada a axios post para hacer login
-    axios.post("http://localhost:4567/login", {
+    axios.post("https://torneos-equipo6.herokuapp.com/login", {
         email: loginUsuario,
         password: loginPassword
     })

@@ -6,7 +6,7 @@ var bNombreUsuario = document.getElementById("nombreP").innerHTML = sesion;
 
 var bEmail = document.getElementById("emailP");
 
-    axios.post("http://localhost:4567/getCorreo", {
+    axios.post("https://torneos-equipo6.herokuapp.com/getCorreo", {
         nombre: sesion
     })
     .then(function(response){

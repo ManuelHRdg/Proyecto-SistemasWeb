@@ -99,7 +99,7 @@ bConfirmarEditar.addEventListener('click',function(){
             alerta.style.display = 'inline';
             document.getElementById("textoAlerta").innerHTML = "Los Passwords no coinciden";
         }else{
-            axios.post("http://localhost:4567/editar",{
+            axios.post("https://torneos-equipo6.herokuapp.com/editar",{
             id: sesion,
             nombre: document.getElementById("nombreE").value,
             email: document.getElementById("emailE").value,

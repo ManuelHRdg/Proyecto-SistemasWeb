@@ -3,7 +3,7 @@ var botonRegistro = document.getElementById("botonRegistro");
 
 var sesionCookie = getCookie("Sesion");
 
-if(sesionCookie != ""){
-    botonIngreso.style.display = "none";
-    botonRegistro.style.display = "none";
+if (sesionCookie != "") {
+  botonIngreso.style.display = "none";
+  botonRegistro.style.display = "none";
 }

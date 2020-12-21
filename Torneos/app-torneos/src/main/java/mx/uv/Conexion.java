@@ -6,8 +6,6 @@ import java.sql.SQLException;
 
 public class Conexion {
     public String driver = "com.mysql.cj.jdbc.Driver";
-    public String database = "proyectoTorneos";
-    public String hostname = "localhost";
     public String port = "3306";
     public String url = "jdbc:mysql://db4free.net:3306/proyectotorneos" + "?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
     public String username = "equiposw";
